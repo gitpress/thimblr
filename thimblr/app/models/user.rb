@@ -3,6 +3,10 @@ class User < ActiveRecord::Base
   has_many :leaders, through: :subscriptions
   has_many :reverse_subcriptions, foreign_key: :leader_id, class_name: "Subscription", dependent: :destroy
   has_many :followers, through: :reverse_subcriptions
+  has_many :posts, dependent: :destroy
+  has_many :text_posts, dependent: :destroy
+  has_many :image_posts, dependent: :destroy
+  has_many :comments
   
   def following?(leader)
     leaders.include? leader
