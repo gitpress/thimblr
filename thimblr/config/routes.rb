@@ -9,7 +9,10 @@ Rails.application.routes.draw do
 
   resources :users
   
+  #get the url /signup but make it actually users#new but show signup publically
+  get 'signup', to: 'users#new', as: 'signup'
 
+  root 'posts#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
