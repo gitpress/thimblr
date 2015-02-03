@@ -9,10 +9,12 @@ class PostsController < ApplicationController
   end
   
   def latest
-    @post = Post.last(:limit => 1)
+    @latest_post = Post.last
   end
   helper_method :latest
-  # in view use <%= latest %>
+  # in view use <%= latest %> etc. To get the link you have to use:
+  #  <a href="<%= root_url %><%= latest.id %>">link</a>, this makes sense for a sidebar/widget area
+  #  this is an ungodly hack just for fun....
   
   
 end

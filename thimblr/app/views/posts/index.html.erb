@@ -1,5 +1,7 @@
 <div class="page-header">
     <h1>Home</h1>
+  <p>The latest title is called: <%= latest.title %>, written by <%= latest.user.name %> and can be found here: <%= link_to "link", latest.url %></p>
 </div>
 
+<a href="<%= root_url %><%= latest.id %>">hello</a>
 <%= render @posts %>
